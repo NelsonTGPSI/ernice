@@ -163,11 +163,10 @@ footer {
   border-top: 1px solid #e5e7eb;
 }
 html.dark footer {
-  background: #23232a;
-  color: #a1a1aa;
-  border-top: 1px solid #2d2d34;
+  background: #111827 !important;
+  color: #e5e7eb !important;
+  border-top: 1px solid #2d2d34 !important;
 }
-
 /* Scrollbar custom */
 ::-webkit-scrollbar { width: 8px; background: #e5e7eb; }
 ::-webkit-scrollbar-thumb { background: var(--accent-2); border-radius: 8px; }
