@@ -247,6 +247,12 @@ function setupEvents(){
     link.addEventListener('click', () => {
       el('mobileMenu').classList.add('hidden');
       menuBtnToggle();
+  if (document.getElementById('clearCompare')) {
+    document.getElementById('clearCompare').onclick = () => {
+      state.compare = [];
+      renderComparePanel();
+    };
+  }
     });
   });
 
