@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ernice — Loja de Computadores</title>
+  <meta name="description" content="Loja angolana de computadores e componentes com assistência local, pesquisa avançada, comparação e pedido via WhatsApp." />
+  <meta property="og:title" content="Ernice — Loja de Computadores" />
+  <meta property="og:description" content="Computadores, componentes e assistência local em Angola. Faça seu pedido online!" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+ <!-- Adicione antes do fechamento da tag </head> -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/fuse.js@6.6.2/dist/fuse.basic.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+<header class="bg-white border-b sticky top-0 z-50 shadow-sm transition-smooth">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3 focus:outline-accent" aria-label="Ir para o início">
+      <div class="w-12 h-12 rounded-lg bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center text-white font-bold shadow">E</div>
+      <div class="hidden sm:block">
+        <h1 class="text-lg font-semibold">Ernice</h1>
+        <p class="text-xs text-slate-500">Loja Angolana de Computadores</p>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-6" aria-label="Navegação principal">
+      <a href="#produtos" class="text-sm hover:text-accent focus:outline-accent" data-i18n="nav_products">Produtos</a>
+      <a href="#servicos" class="text-sm hover:text-accent focus:outline-accent" data-i18n="nav_services">Serviços</a>
+      <a href="#sobre" class="text-sm hover:text-accent focus:outline-accent" data-i18n="nav_about">Sobre</a>
+      <a href="#contactos" class="text-sm hover:text-accent focus:outline-accent" data-i18n="nav_contacts">Contactos</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <input id="search" aria-label="Pesquisar produtos" class="hidden sm:block w-72 px-3 py-2 border rounded-md text-sm focus-ring" placeholder="Pesquisar produtos, ex: SSD 1TB" />
+      <button id="themeToggle" class="p-2 rounded-md border transition-smooth" aria-pressed="false" title="Alternar tema" aria-label="Alternar tema">🌓</button>
+      <button id="langToggle" class="p-2 rounded-md border transition-smooth" aria-pressed="false" title="Switch language" aria-label="Switch language">EN</button>
+      <button id="compareBtn" class="p-2 border rounded-md" title="Comparar produtos" aria-label="Comparar produtos">⚖️</button>
+      <button id="cartBtn" class="relative p-2 border rounded-md" aria-label="Abrir carrinho">
+        🛒 <span id="cartCount" class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">0</span>
+      </button>
+      <button id="menuBtn" class="md:hidden p-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div id="mobileMenu" class="md:hidden hidden bg-white border-b transition-smooth">
+  <div class="px-4 py-3 flex flex-col gap-2">
+    <a href="#produtos" class="text-sm mobile-link focus:outline-accent" data-i18n="nav_products">Produtos</a>
+    <a href="#servicos" class="text-sm mobile-link focus:outline-accent" data-i18n="nav_services">Serviços</a>
+    <a href="#sobre" class="text-sm mobile-link focus:outline-accent" data-i18n="nav_about">Sobre</a>
+    <a href="#contactos" class="text-sm mobile-link focus:outline-accent" data-i18n="nav_contacts">Contactos</a>
+  </div>
+</div>
+
+<!-- Banner promocional -->
+<div id="promoBanner" class="w-full bg-accent text-white text-center py-2 font-semibold animate-fade-in-down">🔥 Promoção: 10% de desconto na compra de qualquer produto! 🔥</div>
+
+<main class="max-w-7xl mx-auto px-6 py-8">
+  <!-- HERO -->
+  <section class="grid md:grid-cols-2 gap-8 items-center mb-12">
+    <div>
+      <h2 id="heroTitle" class="text-4xl font-extrabold leading-tight">Computadores e componentes <span class="text-accent">ergonómicos</span> e confiáveis — apoio local em Angola.</h2>
+      <p id="heroDesc" class="mt-4 text-slate-600">Soluções para empresas, gamers e criadores. Montagem, garantia e assistência técnica local.</p>
+      <div class="mt-6 flex gap-3">
+        <a href="#produtos" class="px-4 py-2 rounded-md bg-accent text-white font-semibold shadow transition-smooth focus:outline-accent" data-i18n="catalog">Ver catálogo</a>
+        <a href="#contactos" class="px-4 py-2 rounded-md border focus:outline-accent" data-i18n="contact">Contactar</a>
+      </div>
+      <ul class="mt-6 grid grid-cols-3 gap-2 text-sm text-slate-600">
+        <li class="flex items-center gap-2" data-i18n="usp1">✅ Garantia local</li>
+        <li class="flex items-center gap-2" data-i18n="usp2">🛠 Assistência</li>
+        <li class="flex items-center gap-2" data-i18n="usp3">🚚 Entregas em Luanda</li>
+      </ul>
+    </div>
+    <div class="relative animate-fade-in">
+      <div class="h-80 rounded-2xl overflow-hidden card-shadow">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Computador Ernice" class="w-full h-full object-cover" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTROLOS E FILTROS -->
+  <section id="produtos" >
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
+      <div class="flex items-center gap-3">
+        <label for="categoria" class="text-sm" data-i18n="category">Categoria</label>
+        <select id="categoria" class="px-3 py-2 border rounded-md text-sm focus-ring">
+          <option value="all" data-i18n="all">Todas</option>
+        </select>
+        <label for="marca" class="text-sm" data-i18n="brand">Marca</label>
+        <select id="marca" class="px-3 py-2 border rounded-md text-sm focus-ring">
+          <option value="all" data-i18n="all">Todas</option>
+        </select>
+      </div>
+      <div class="flex items-center gap-3">
+        <label for="sort" class="text-sm" data-i18n="sort">Ordenar</label>
+        <select id="sort" class="px-3 py-2 border rounded-md text-sm focus-ring">
+          <option value="relevance" data-i18n="relevance">Relevância</option>
+          <option value="price-asc" data-i18n="price_asc">Preço ↑</option>
+          <option value="price-desc" data-i18n="price_desc">Preço ↓</option>
+        </select>
+      </div>
+    </div>
+    <div id="loadingSpinner" class="w-full flex justify-center py-8 hidden">
+      <div class="loader"></div>
+    </div>
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <div id="noResults" class="hidden text-center text-slate-500 mt-8">Nenhum produto encontrado.</div>
+  </section>
+
+  <!-- Comparação -->
+  <section id="compare" class="mt-10">
+    <h3 class="text-xl font-semibold" data-i18n="compare_title">Comparador rápido</h3>
+    <div id="comparePanel" class="mt-3 p-4 border rounded-md bg-white hidden"></div>
+  </section>
+
+  <!-- Sobre e serviços -->
+  <section id="sobre" class="mt-12 grid md:grid-cols-2 gap-6 items-start">
+    <div>
+      <h3 class="text-2xl font-bold" data-i18n="about_title">Sobre a Ernice</h3>
+      <p class="mt-3 text-slate-600" data-i18n="about_desc">Empresa angolana dedicada à venda de computadores e componentes com enfoque em confiança, preço justo e assistência local.</p>
+    </div>
+    <div id="servicos">
+      <h4 class="font-semibold" data-i18n="services_title">Serviços</h4>
+      <ul class="mt-3 text-slate-600 list-disc pl-5">
+        <li data-i18n="service1">Montagem personalizada</li>
+        <li data-i18n="service2">Assistência técnica</li>
+        <li data-i18n="service3">Upgrades e optimização</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Blog / Notícias simplificado -->
+  <section class="mt-12">
+    <h3 class="text-xl font-semibold" data-i18n="news_title">Últimas notícias</h3>
+    <div class="mt-4 grid sm:grid-cols-2 gap-4">
+      <article class="p-4 border rounded-md">
+        <h5 class="font-semibold news-title" data-i18n="news1_title"> Nova linha Ernice Pro</h5>
+        <p class="text-slate-600 text-sm mt-2 news-desc" data-i18n="news1_desc">Computadores com garantia local e suporte dedicado.</p>
+      </article>
+      <article class="p-4 border rounded-md">
+        <h5 class="font-semibold news-title" data-i18n="news2_title">Promoção SSDs</h5>
+        <p class="text-slate-600 text-sm mt-2 news-desc" data-i18n="news2_desc">Descontos em SSDs durante a semana.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contactos -->
+  <section id="contactos" class="mt-12 mb-20 grid md:grid-cols-2 gap-6">
+    <div>
+      <h3 class="text-xl font-semibold" data-i18n="contacts_title">Contactos</h3>
+      <p class="mt-2 text-slate-600" data-i18n="contacts_desc">Visite a loja ou envie uma mensagem.</p>
+      <ul class="mt-4 text-slate-600">
+        <li data-i18n="contacts_address">📍 Luanda — (exemplo)</li>
+        <li data-i18n="contacts_phone">📞 +244 9xx xxx xxx</li>
+        <li data-i18n="contacts_email">✉️ geral@ernice.ao</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold" data-i18n="send_message">Enviar mensagem</h4>
+      <form id="contactForm" class="mt-3 flex flex-col gap-3" novalidate>
+        <input name="name" placeholder="Nome" class="px-3 py-2 border rounded-md" required data-i18n-placeholder="name_placeholder"/>
+        <input name="email" type="email" placeholder="Email" class="px-3 py-2 border rounded-md" required data-i18n-placeholder="email_placeholder"/>
+        <textarea name="message" placeholder="Mensagem" class="px-3 py-2 border rounded-md" rows="4" required data-i18n-placeholder="message_placeholder"></textarea>
+        <button type="submit" class="px-4 py-2 rounded-md bg-accent text-white" data-i18n="send">Enviar</button>
+        <div id="contactStatus" class="text-sm text-slate-600"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- Carrinho slide-over -->
+<aside id="cartPanel" class="fixed right-0 top-0 h-full w-96 bg-white border-l transform translate-x-full transition-transform p-4 z-50 shadow-xl animate-slide-in" aria-hidden="true">
+  <div class="flex justify-between items-center">
+    <h4 class="font-semibold" id="cartTitle" data-i18n="cart">Pedido/Reserva</h4>
+    <button id="closeCart" class="text-xl px-2 py-1 rounded hover:bg-slate-100 focus:outline-accent" title="Fechar carrinho" aria-label="Fechar carrinho">✖</button>
+  </div>
+  <div id="cartItems" class="mt-4 space-y-3 overflow-auto" style="max-height:60vh"></div>
+  <div class="mt-4 border-t pt-4">
+    <div class="flex justify-between items-center">
+      <div data-i18n="total">Total</div>
+      <div id="cartTotal">0 AOA</div>
+    </div>
+    <div class="mt-4 flex gap-3">
+      <button id="checkoutBtn" class="flex-1 px-3 py-2 rounded-md bg-accent text-white" data-i18n="finalize">Finalizar pedido</button>
+      <button id="clearCart" class="px-3 py-2 rounded-md border" data-i18n="clear">Limpar</button>
+    </div>
+  </div>
+</aside>
+
+<!-- Produto modal -->
+<div id="productModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-60 animate-fade-in" aria-hidden="true">
+  <div class="bg-white rounded-lg max-w-3xl w-full p-6 shadow-lg animate-slide-in">
+    <button id="closeModal" class="ml-auto focus:outline-accent">✖</button>
+    <div id="modalContent" class="grid md:grid-cols-2 gap-4"></div>
+  </div>
+</div>
+
+<!-- Toast de feedback -->
+<div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-2 rounded bg-accent text-white shadow-lg hidden"></div>
+
+<!-- Loading spinner (global, hidden by default) -->
+<div id="globalSpinner" class="fixed inset-0 bg-black/30 flex items-center justify-center z-[100] hidden">
+  <div class="loader"></div>
+</div>
+
+<footer class="bg-white border-t mt-12">
+  <div class="max-w-7xl mx-auto px-6 py-6 text-sm text-slate-600 flex flex-col md:flex-row justify-between gap-2">
+    <div>© Ernice — Loja de Computadores</div>
+    <div>Desenvolvido por tua-equipa · <a href="#contactos" class="text-accent" data-i18n="contacts">Contactos</a></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
