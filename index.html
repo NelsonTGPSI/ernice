@@ -166,13 +166,15 @@
     </div>
     <div>
       <h4 class="font-semibold" data-i18n="send_message">Enviar mensagem</h4>
-      <form id="contactForm" class="mt-3 flex flex-col gap-3" novalidate>
-        <input name="name" placeholder="Nome" class="px-3 py-2 border rounded-md" required data-i18n-placeholder="name_placeholder"/>
-        <input name="email" type="email" placeholder="Email" class="px-3 py-2 border rounded-md" required data-i18n-placeholder="email_placeholder"/>
-        <textarea name="message" placeholder="Mensagem" class="px-3 py-2 border rounded-md" rows="4" required data-i18n-placeholder="message_placeholder"></textarea>
-        <button type="submit" class="px-4 py-2 rounded-md bg-accent text-white" data-i18n="send">Enviar</button>
-        <div id="contactStatus" class="text-sm text-slate-600"></div>
-      </form>
+        <form action="https://formsubmit.co/isabelgumasacaneno62@gmail.com" method="POST" class="mt-3 flex flex-col gap-3">
+          <!-- Redireciona para obrigado.html após envio -->
+          <input type="hidden" name="_next" value="obrigado.html">
+          <input type="hidden" name="_captcha" value="false">
+          <input name="name" placeholder="Nome" class="px-3 py-2 border rounded-md" required data-i18n-placeholder="name_placeholder"/>
+          <input name="email" type="email" placeholder="Email" class="px-3 py-2 border rounded-md" required data-i18n-placeholder="email_placeholder"/>
+          <textarea name="message" placeholder="Mensagem" class="px-3 py-2 border rounded-md" rows="4" required data-i18n-placeholder="message_placeholder"></textarea>
+          <button type="submit" class="px-4 py-2 rounded-md bg-accent text-white" data-i18n="send">Enviar</button>
+        </form>
     </div>
   </section>
 </main>
@@ -212,10 +214,58 @@
   <div class="loader"></div>
 </div>
 
-<footer class="bg-white border-t mt-12">
-  <div class="max-w-7xl mx-auto px-6 py-6 text-sm text-slate-600 flex flex-col md:flex-row justify-between gap-2">
-    <div>© Ernice — Loja de Computadores</div>
-    <div>Desenvolvido por tua-equipa · <a href="#contactos" class="text-accent" data-i18n="contacts">Contactos</a></div>
+<footer class="bg-white dark:bg-[#18181b] border-t mt-16">
+  <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-8">
+    <!-- Branding e texto -->
+    <div class="flex flex-col items-center md:items-start gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-3xl font-extrabold text-accent">E</span>
+        <span class="font-semibold text-2xl tracking-tight">Ernice</span>
+      </div>
+      <div class="text-slate-600 dark:text-slate-300 text-sm text-center md:text-left">
+        © 2025 Ernice — Loja de Computadores<br>
+        Desenvolvido por tua-equipa
+      </div>
+    </div>
+    <!-- Separador vertical em telas grandes -->
+    <div class="hidden md:block h-14 w-px bg-slate-200 dark:bg-slate-700"></div>
+    <!-- Redes sociais -->
+    <div class="flex flex-col items-center gap-2">
+      <div class="flex gap-6">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/244944059983" target="_blank" aria-label="WhatsApp" class="group transition hover:scale-110">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" class="text-[#25D366] group-hover:opacity-80">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M7.5 16.5l1-3a6 6 0 119.5-4.5c0 3.3-2.7 6-6 6a6 6 0 01-4.5-1.5l-3 1 1-3z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          </svg>
+        </a>
+        <!-- Facebook -->
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="group transition hover:scale-110">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" class="text-[#1877F3] group-hover:opacity-80">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M15 8h2v3h-2v8h-3v-8H9V8h2V7c0-1.1.9-2 2-2h2v3h-2v1z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          </svg>
+        </a>
+        <!-- Instagram -->
+        <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="group transition hover:scale-110">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" class="text-[#E1306C] group-hover:opacity-80">
+            <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="17" cy="7" r="1" fill="currentColor"/>
+          </svg>
+        </a>
+        <!-- Email -->
+        <a href="mailto:geral@ernice.ao" aria-label="Email" class="group transition hover:scale-110">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" class="text-[#6366F1] group-hover:opacity-80">
+            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </a>
+      </div>
+      <div class="text-slate-500 dark:text-slate-400 text-xs mt-2">
+        Luanda, Angola
+      </div>
+    </div>
   </div>
 </footer>
 
