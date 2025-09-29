@@ -235,3 +235,11 @@ html.dark h5.news-title,
 html.dark p.news-desc {
   color: #111 !important;
 }
+/* ...no seu arquivo css/styles.css... */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: none;}
+}
+.animate-fade-in {
+  animation: fade-in 0.8s cubic-bezier(.4,0,.2,1) both;
+}
