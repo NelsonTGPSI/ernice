@@ -23,6 +23,7 @@ const translations = {
     heroDesc: "Solutions for companies, gamers and creators. Assembly, warranty and local technical support.",
     catalog: "See catalog",
     contact: "Contact",
+    contact_us: "Contact us",
     cart: "Order/Reserve",
     finalize: "Finish order",
     clear: "Clear",
@@ -48,8 +49,8 @@ const translations = {
     about_title: "About Ernice",
     about_desc: "Angolan company dedicated to selling computers and components with a focus on trust, fair price and local support.",
     services_title: "Services",
-    service1: "Custom assembly",
-    service2: "Technical support",
+    service1: "Custom computer assembly",
+    service2: "Local and remote technical support",
     service3: "Upgrades and optimization",
     news_title: "Latest news",
     news1_title: "New Ernice Pro line",
@@ -58,25 +59,49 @@ const translations = {
     news2_desc: "Discounts on SSDs this week.",
     contacts_title: "Contacts",
     contacts_desc: "Visit the store or send a message.",
-    contacts_address: "📍 Luanda — (example)",
-    contacts_phone: "📞 +244 9xx xxx xxx",
+    contacts_address: "📍 Lubango, Rua da Maternidade (next to Banco BIC)",
+    contacts_phone: "📞 +244 975 237 090",
     contacts_email: "✉️ geral@ernice.ao",
     send_message: "Send message",
     name_placeholder: "Name",
     email_placeholder: "Email",
+    phone_placeholder: "Phone",
     message_placeholder: "Message",
     send: "Send",
-    cart: "Order/Reserve",
     total: "Total",
-    finalize: "Finish order",
-    clear: "Clear",
-    compare_select: "Select at least two products to compare."
+    compare_select: "Select at least two products to compare.",
+        // ...já existente...
+    mission: "Mission",
+    mission_text: "Facilitate access to quality technology, adapted to the needs of the Angolan market.",
+    vision: "Vision",
+    vision_text: "To be a national reference in innovation, trust and technical support.",
+    values: "Values",
+    values_text: "Ethics, transparency and excellence in service.",
+    team: "Team",
+    team_text: "Certified professionals, experienced in IT, ready to guide from choice to after-sales.",
+    infrastructure: "Infrastructure",
+    infrastructure_text: "Modern physical store in Lubango, with its own technical laboratory and demonstration area.",
+    service1: "Custom computer assembly",
+    service1_text: "Projects tailored for companies, gamers and professionals, with warranty and local support.",
+    service2: "Local and remote technical assistance",
+    service2_text: "Diagnosis, maintenance, upgrades, formatting, data recovery and remote support.",
+    service3: "Upgrades and system optimization",
+    service3_text: "SSD installation, RAM, video cards and performance consulting.",
+    service4: "Digital security",
+    service4_text: "Antivirus setup, backup, firewall, data protection and training.",
+    service5: "Networks and connectivity",
+    service5_text: "Local network setup, business Wi-Fi, structured cabling and servers.",
+    service6: "Peripheral sales and support",
+    service6_text: "Printers, monitors, accessories, installation and full setup.",
+    services_note: "All services include warranty, fast service and after-sales support. Request a quote or schedule a technical visit.",
+    // ...já existente...
   },
   pt: {
     heroTitle: "Computadores e componentes ergonómicos e confiáveis — apoio local em Angola.",
     heroDesc: "Soluções para empresas, gamers e criadores. Montagem, garantia e assistência técnica local.",
     catalog: "Ver catálogo",
     contact: "Contactar",
+    contact_us: "Fale conosco",
     cart: "Pedido/Reserva",
     finalize: "Finalizar pedido",
     clear: "Limpar",
@@ -102,9 +127,9 @@ const translations = {
     about_title: "Sobre a Ernice",
     about_desc: "Empresa angolana dedicada à venda de computadores e componentes com enfoque em confiança, preço justo e assistência local.",
     services_title: "Serviços",
-    service1: "Montagem personalizada",
-    service2: "Assistência técnica",
-    service3: "Upgrades e optimização",
+    service1: "Montagem personalizada de computadores",
+    service2: "Assistência técnica local e remota",
+    service3: "Upgrades e otimização de sistemas",
     news_title: "Últimas notícias",
     news1_title: "Nova linha Ernice Pro",
     news1_desc: "Computadores com garantia local e suporte dedicado.",
@@ -112,19 +137,42 @@ const translations = {
     news2_desc: "Descontos em SSDs durante a semana.",
     contacts_title: "Contactos",
     contacts_desc: "Visite a loja ou envie uma mensagem.",
-    contacts_address: "📍 Luanda — (exemplo)",
-    contacts_phone: "📞 +244 9xx xxx xxx",
+    contacts_address: "📍 Lubango, Rua da Maternidade (ao lado do Banco BIC)",
+    contacts_phone: "📞 +244 975 237 090",
     contacts_email: "✉️ geral@ernice.ao",
     send_message: "Enviar mensagem",
     name_placeholder: "Nome",
     email_placeholder: "Email",
+    phone_placeholder: "Telefone",
     message_placeholder: "Mensagem",
     send: "Enviar",
-    cart: "Pedido/Reserva",
     total: "Total",
-    finalize: "Finalizar pedido",
-    clear: "Limpar",
-    compare_select: "Selecione pelo menos dois produtos para comparar."
+    compare_select: "Selecione pelo menos dois produtos para comparar.",
+        // ...já existente...
+    mission: "Missão",
+    mission_text: "Facilitar o acesso à tecnologia de qualidade, adaptada às necessidades do mercado angolano.",
+    vision: "Visão",
+    vision_text: "Ser referência nacional em inovação, confiança e suporte técnico.",
+    values: "Valores",
+    values_text: "Ética, transparência e excelência no atendimento.",
+    team: "Equipe",
+    team_text: "Profissionais certificados, experientes em TI, prontos para orientar desde a escolha até o pós-venda.",
+    infrastructure: "Infraestrutura",
+    infrastructure_text: "Loja física moderna em Lubango, com laboratório técnico próprio e área de demonstração.",
+    service1: "Montagem personalizada de computadores",
+    service1_text: "Projetos sob medida para empresas, gamers e profissionais, com garantia e suporte local.",
+    service2: "Assistência técnica local e remota",
+    service2_text: "Diagnóstico, manutenção, upgrades, formatação, recuperação de dados e suporte remoto.",
+    service3: "Upgrades e otimização de sistemas",
+    service3_text: "Instalação de SSD, memória RAM, placas de vídeo e consultoria para desempenho.",
+    service4: "Segurança digital",
+    service4_text: "Configuração de antivírus, backup, firewall, proteção de dados e treinamento.",
+    service5: "Redes e conectividade",
+    service5_text: "Montagem de redes locais, Wi-Fi empresarial, cabeamento estruturado e servidores.",
+    service6: "Venda e suporte de periféricos",
+    service6_text: "Impressoras, monitores, acessórios, instalação e configuração completa.",
+    services_note: "Todos os serviços contam com garantia, atendimento ágil e suporte pós-venda. Solicite um orçamento ou agende uma visita técnica.",
+    // ...já existente...
   }
 };
 let currentLang = "pt";
@@ -219,7 +267,6 @@ function setupEvents(){
   el('menuBtn').addEventListener('click', ()=>{ const m = el('mobileMenu'); m.classList.toggle('hidden'); menuBtnToggle(); });
   el('themeToggle').addEventListener('click', toggleTheme);
 
-  // CORRIGIDO: Botão de comparação faz scroll e mostra toast se vazio
   el('compareBtn').addEventListener('click', ()=>{
     if(state.compare.length < 2){
       showToast(translations[currentLang].compare_select);
@@ -250,7 +297,6 @@ function setupEvents(){
     });
   });
 
-  
   if (document.getElementById('clearCompare')) {
     document.getElementById('clearCompare').onclick = () => {
       state.compare = [];
@@ -261,12 +307,7 @@ function setupEvents(){
   el('langToggle').addEventListener('click', ()=>{
     setLang(currentLang === "pt" ? "en" : "pt");
   });
-
-  el('langToggle').addEventListener('click', ()=>{
-    setLang(currentLang === "pt" ? "en" : "pt");
-  });
 }
-// ...existing code...
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
@@ -275,14 +316,12 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth' });
-      // Opcional: fechar menu mobile após clique
       if (el('mobileMenu')) el('mobileMenu').classList.add('hidden');
       menuBtnToggle();
     }
   });
 });
 
-// ...existing code...
 function menuBtnToggle(){ const btn = document.getElementById('menuBtn'); btn.setAttribute('aria-expanded', document.getElementById('mobileMenu').classList.contains('hidden') ? 'false' : 'true'); }
 
 function openProductModal(id){ const p = PRODUCTS.find(x=>x.id===id); if(!p) return; const modal = el('productModal'); const content = el('modalContent'); content.innerHTML = `
@@ -330,8 +369,6 @@ function updateCartUI(){
   });
   el('cartTotal').textContent = formatMoney(total);
   el('cartCount').textContent = state.cart.reduce((s,i)=>s+i.qty,0);
-  document.querySelectorAll('.btn-inc').forEach(b=>b.addEventListener('click', e=> changeQty(e.target.dataset.id, +1)));
-  document.querySelectorAll('.btn-dec').forEach(b=>b.addEventListener('click', e=> changeQty(e.target.dataset.id, -1)));
   if (el("cartTitle")) el("cartTitle").textContent = translations[currentLang].cart;
   document.querySelectorAll('[data-i18n="total"]').forEach(e=>e.textContent = translations[currentLang].total);
   if (el("checkoutBtn")) el("checkoutBtn").textContent = translations[currentLang].finalize;
