@@ -10,9 +10,8 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
- <!-- Adicione antes do fechamento da tag </head> -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/fuse.js@6.6.2/dist/fuse.basic.min.js"></script>
@@ -51,7 +50,9 @@
 </header>
 
 <!-- Mobile menu -->
-<div id="mobileMenu" class="md:hidden hidden bg-white border-b transition-smooth">
+<!-- Mobile menu -->
+<div id="mobileMenu" class="md:hidden hidden bg-white border-b transition-smooth"
+     style="position:fixed; top:0; left:0; width:100vw; z-index:100;">
   <div class="px-4 py-3 flex flex-col gap-2">
     <a href="#produtos" class="text-sm mobile-link focus:outline-accent" data-i18n="nav_products">Produtos</a>
     <a href="#servicos" class="text-sm mobile-link focus:outline-accent" data-i18n="nav_services">Serviços</a>
@@ -61,22 +62,22 @@
 </div>
 
 <!-- Banner promocional -->
-<div id="promoBanner" class="w-full bg-accent text-white text-center py-2 font-semibold animate-fade-in-down">🔥 Promoção: 10% de desconto na compra de qualquer produto! 🔥</div>
+<div id="promoBanner" class="w-full bg-accent text-white text-center py-2 font-semibold animate-fade-in-down" data-i18n="promo">🔥 Promoção: SSDs com 10% desconto esta semana! 🔥</div>
 
 <main class="max-w-7xl mx-auto px-6 py-8">
   <!-- HERO -->
   <section class="grid md:grid-cols-2 gap-8 items-center mb-12">
     <div>
-      <h2 id="heroTitle" class="text-4xl font-extrabold leading-tight">Computadores e componentes <span class="text-accent">ergonómicos</span> e confiáveis — apoio local em Angola.</h2>
-      <p id="heroDesc" class="mt-4 text-slate-600">Soluções para empresas, gamers e criadores. Montagem, garantia e assistência técnica local.</p>
+      <h2 id="heroTitle" class="text-4xl font-extrabold leading-tight" data-i18n="heroTitle">Computadores e componentes <span class="text-accent">ergonómicos</span> e confiáveis — apoio local em Angola.</h2>
+      <p id="heroDesc" class="mt-4 text-slate-600" data-i18n="heroDesc">Soluções para empresas, gamers e criadores. Montagem, garantia e assistência técnica local.</p>
       <div class="mt-6 flex gap-3">
         <a href="#produtos" class="px-4 py-2 rounded-md bg-accent text-white font-semibold shadow transition-smooth focus:outline-accent" data-i18n="catalog">Ver catálogo</a>
         <a href="#contactos" class="px-4 py-2 rounded-md border focus:outline-accent" data-i18n="contact">Contactar</a>
       </div>
       <ul class="mt-6 grid grid-cols-3 gap-2 text-sm text-slate-600">
-        <li class="flex items-center gap-2" data-i18n="usp1">✅ Garantia local</li>
-        <li class="flex items-center gap-2" data-i18n="usp2">🛠 Assistência</li>
-        <li class="flex items-center gap-2" data-i18n="usp3">🚚 Entregas em Luanda</li>
+        <li class="flex items-center gap-2" data-i18n="usp1">🔹 Garantia local</li>
+        <li class="flex items-center gap-2" data-i18n="usp2">🔹 Assistência</li>
+        <li class="flex items-center gap-2" data-i18n="usp3">🔹 Entregas em Luanda</li>
       </ul>
     </div>
     <div class="relative animate-fade-in">
@@ -112,58 +113,90 @@
       <div class="loader"></div>
     </div>
     <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    <div id="noResults" class="hidden text-center text-slate-500 mt-8">Nenhum produto encontrado.</div>
+    <div id="noResults" class="hidden text-center text-slate-500 mt-8" data-i18n="noResults">Nenhum produto encontrado.</div>
   </section>
 
   <!-- Comparação -->
   <section id="compare" class="mt-10">
     <div class="flex items-center gap-4 mb-2">
       <h3 class="text-xl font-semibold" data-i18n="compare_title">Comparador rápido</h3>
-      <button id="clearCompare" class="px-3 py-1 rounded bg-accent text-white text-sm" type="button">Limpar comparação</button>
+      <button id="clearCompare" class="px-3 py-1 rounded bg-accent text-white text-sm" type="button" data-i18n="clear">Limpar comparação</button>
     </div>
     <div id="comparePanel" class="mt-3 p-4 border rounded-md bg-white hidden"></div>
   </section>
-
-  <!-- Sobre e serviços -->
-<section id="sobre" class="mt-12 grid md:grid-cols-2 gap-8 items-start">
-  <div class="bg-white rounded-xl border border-slate-200 p-8 flex flex-col justify-center items-start animate-fade-in shadow-sm">
-    <h3 class="text-3xl font-bold text-accent mb-3 flex items-center gap-2">
-      <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#6366f1" stroke-width="2"/><path d="M12 8v4l3 2" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/></svg>
-      Sobre a Ernice
-    </h3>
-    <p class="mt-2 text-slate-600 text-lg leading-relaxed">
-      Somos uma empresa angolana dedicada à venda de computadores e componentes, com foco em confiança, preço justo e assistência local.<br>
-      <span class="inline-block mt-2 px-3 py-1 rounded bg-accent/10 text-accent font-semibold text-sm">Garantia local</span>
-      <span class="inline-block mt-2 px-3 py-1 rounded bg-green-100 text-green-700 font-semibold text-sm">Atendimento personalizado</span>
-    </p>
-    <div class="mt-4 flex gap-3">
-      <a href="#contactos" class="px-4 py-2 rounded-md bg-accent text-white font-semibold shadow transition-smooth focus:outline-accent">Fale conosco</a>
-      <a href="#produtos" class="px-4 py-2 rounded-md border border-accent text-accent focus:outline-accent">Ver produtos</a>
+<!-- Sobre e Serviços -->
+<section class="mt-12 grid md:grid-cols-2 gap-8 items-start">
+    <!-- Sobre -->
+    <div class="bg-white rounded-xl border border-slate-200 p-8 shadow-sm animate-fade-in">
+        <h3 class="text-3xl font-bold text-accent mb-4 text-center" data-i18n="about_title">Sobre a Ernice</h3>
+        <div class="mb-4">
+            <p class="text-slate-700 text-lg leading-relaxed font-medium border-l-4 border-accent pl-4 bg-slate-50/60 py-2" data-i18n="about_desc">
+                A Ernice é uma empresa angolana especializada em soluções de informática, oferecendo computadores, componentes e assistência técnica com atendimento próximo e transparente. Nosso compromisso é garantir tecnologia confiável, preço justo e suporte local.
+            </p>
+        </div>
+        <ul class="space-y-3 text-slate-700 text-base">
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="mission">Missão</span>
+                <span class="block pl-2" data-i18n="mission_text">Facilitar o acesso à tecnologia de qualidade, adaptada às necessidades do mercado angolano.</span>
+            </li>
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="vision">Visão</span>
+                <span class="block pl-2" data-i18n="vision_text">Ser referência nacional em inovação, confiança e suporte técnico.</span>
+            </li>
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="values">Valores</span>
+                <span class="block pl-2" data-i18n="values_text">Ética, transparência e excelência no atendimento.</span>
+            </li>
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="team">Equipe</span>
+                <span class="block pl-2" data-i18n="team_text">Profissionais certificados, experientes em TI, prontos para orientar desde a escolha até o pós-venda.</span>
+            </li>
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="infrastructure">Infraestrutura</span>
+                <span class="block pl-2" data-i18n="infrastructure_text">Loja física moderna em Lubango, com laboratório técnico próprio e área de demonstração.</span>
+            </li>
+        </ul>
+        <div class="flex gap-3 mt-6">
+            <a href="#contactos" class="px-4 py-2 rounded-md bg-accent text-white font-semibold shadow transition-smooth focus:outline-accent" data-i18n="contact_us">Fale conosco</a>
+            <a href="#produtos" class="px-4 py-2 rounded-md border border-accent text-accent focus:outline-accent" data-i18n="catalog">Ver produtos</a>
+        </div>
     </div>
-  </div>
-  <div id="servicos" class="bg-white rounded-xl border border-slate-200 p-8 animate-fade-in shadow-sm">
-    <h4 class="text-2xl font-bold text-accent mb-3 flex items-center gap-2">
-      <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" stroke="#25d366" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#25d366" stroke-width="2" stroke-linecap="round"/></svg>
-      Serviços
-    </h4>
-    <ul class="mt-3 text-slate-600 space-y-3">
-      <li class="flex items-center gap-2">
-        <span class="inline-block w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold">🛠</span>
-        Montagem personalizada de computadores
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold">🔧</span>
-        Assistência técnica local e remota
-      </li>
-      <li class="flex items-center gap-2">
-        <span class="inline-block w-7 h-7 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold">⚡</span>
-        Upgrades e otimização de sistemas
-      </li>
-    </ul>
-    <div class="mt-5">
-      <a href="#contactos" class="px-4 py-2 rounded-md bg-green-600 text-white font-semibold shadow transition-smooth focus:outline-accent">Solicitar serviço</a>
+    <!-- Serviços -->
+    <div class="bg-white rounded-xl border border-slate-200 p-8 shadow-sm animate-fade-in" id="servicos">
+        <h4 class="text-2xl font-bold text-accent mb-4 text-center" data-i18n="services_title">Serviços</h4>
+        <ul class="space-y-4 text-slate-700 text-base">
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="service1">Montagem personalizada de computadores</span>
+                <span class="block pl-2" data-i18n="service1_text">Projetos sob medida para empresas, gamers e profissionais, com garantia e suporte local.</span>
+            </li>
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="service2">Assistência técnica local e remota</span>
+                <span class="block pl-2" data-i18n="service2_text">Diagnóstico, manutenção, upgrades, formatação, recuperação de dados e suporte remoto.</span>
+            </li>
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="service3">Upgrades e otimização de sistemas</span>
+                <span class="block pl-2" data-i18n="service3_text">Instalação de SSD, memória RAM, placas de vídeo e consultoria para desempenho.</span>
+            </li>
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="service4">Segurança digital</span>
+                <span class="block pl-2" data-i18n="service4_text">Configuração de antivírus, backup, firewall, proteção de dados e treinamento.</span>
+            </li>
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="service5">Redes e conectividade</span>
+                <span class="block pl-2" data-i18n="service5_text">Montagem de redes locais, Wi-Fi empresarial, cabeamento estruturado e servidores.</span>
+            </li>
+            <li class="dark:bg-white rounded-md">
+                <span class="block text-accent font-semibold text-base mb-1" data-i18n="service6">Venda e suporte de periféricos</span>
+                <span class="block pl-2" data-i18n="service6_text">Impressoras, monitores, acessórios, instalação e configuração completa.</span>
+            </li>
+        </ul>
+        <div class="mt-6">
+            <p class="text-slate-600 text-base border-l-4 border-green-600 pl-4 bg-slate-50/60 py-2" data-i18n="services_note">
+                Todos os serviços contam com garantia, atendimento ágil e suporte pós-venda. Solicite um orçamento ou agende uma visita técnica.
+            </p>
+            <a href="#contactos" class="mt-4 inline-block px-4 py-2 rounded-md bg-green-600 text-white font-semibold shadow transition-smooth focus:outline-accent" data-i18n="contact">Solicitar serviço</a>
+        </div>
     </div>
-  </div>
 </section>
 
   <!-- Blog / Notícias simplificado -->
@@ -171,7 +204,7 @@
     <h3 class="text-xl font-semibold" data-i18n="news_title">Últimas notícias</h3>
     <div class="mt-4 grid sm:grid-cols-2 gap-4">
       <article class="p-4 border rounded-md">
-        <h5 class="font-semibold news-title" data-i18n="news1_title"> Nova linha Ernice Pro</h5>
+        <h5 class="font-semibold news-title" data-i18n="news1_title">Nova linha Ernice Pro</h5>
         <p class="text-slate-600 text-sm mt-2 news-desc" data-i18n="news1_desc">Computadores com garantia local e suporte dedicado.</p>
       </article>
       <article class="p-4 border rounded-md">
@@ -194,13 +227,14 @@
     </div>
     <div>
       <h4 class="font-semibold" data-i18n="send_message" style="text-align: center;">Enviar mensagem</h4>
-        <form action="https://usebasin.com/f/fe2f8c233d08" method="POST" class="mt-3 flex flex-col gap-3">
+        <form id="contactForm" action="https://usebasin.com/f/fe2f8c233d08" method="POST" class="mt-3 flex flex-col gap-3">
           <input type="hidden" name="redirect" value="https://nelsontgpsi.github.io/ernice/obrigado.html">
-          <input name="name" placeholder="Nome" class="px-3 py-2 border rounded-md" required />
-          <input name="email" type="email" placeholder="Email" class="px-3 py-2 border rounded-md" required />
-          <input name="phone" type="tel" placeholder="Telefone" class="px-3 py-2 border rounded-md" required />
-          <textarea name="message" placeholder="Mensagem" class="px-3 py-2 border rounded-md" rows="4" required></textarea>
-          <button type="submit" class="px-4 py-2 rounded-md bg-accent text-white">Enviar</button>
+          <input name="name" placeholder="Nome" class="px-3 py-2 border rounded-md" required data-i18n-placeholder="name_placeholder" />
+          <input name="email" type="email" placeholder="Email" class="px-3 py-2 border rounded-md" required data-i18n-placeholder="email_placeholder" />
+          <input name="phone" type="tel" placeholder="Telefone" class="px-3 py-2 border rounded-md" required data-i18n-placeholder="phone_placeholder" />
+          <textarea name="message" placeholder="Mensagem" class="px-3 py-2 border rounded-md" rows="4" required data-i18n-placeholder="message_placeholder"></textarea>
+          <div id="contactStatus" class="text-sm text-red-600"></div>
+          <button type="submit" class="px-4 py-2 rounded-md bg-accent text-white" data-i18n="send">Enviar</button>
         </form>
     </div>
   </section>
